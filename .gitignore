@@ -1,0 +1,208 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+/dist
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Environment files - CRITICAL: Never commit these to GitHub
+.env
+.env.local
+.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.example
+.env.sample
+
+# vercel
+.vercel
+
+# TypeScript build files
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+next-env.d.ts
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Temporary folders
+tmp/
+temp/
+
+# Security and deployment files - Healthcare platform specific
+*.key
+*.pem
+*.p12
+*.pfx
+.env.backup
+.env.production
+.env.staging
+
+# Healthcare platform specific files
+build-output.txt
+*.log.txt
+patient-data/
+backups/
+*.csv
+*.xlsx
+
+# Telegram bot files
+telegram-config.json
+bot-token.txt
+
+# Editor and system files
+*.sublime-project
+*.sublime-workspace
+.history/
+.vscode/settings.json
+.vscode/launch.json
+
+# Package manager files
+yarn.lock
+pnpm-lock.yaml
+.pnpm-store/
+
+# Build and deployment artifacts
+.next/
+out/
+build/
+dist/
+*.tgz
+*.tar.gz
+
+# Analytics and tracking
+.vercel/
+.netlify/
+
+# Database and storage
+*.db
+*.sqlite
+*.sqlite3
+
+# Cache directories
+.cache/
+.parcel-cache/
+.nyc_output/
+
+# Runtime and process files
+*.pid
+*.seed
+*.pid.lock
+.lock-wscript
+
+# Coverage and testing
+coverage/
+.nyc_output/
+.coverage/
+*.lcov
+
+# Backup files
+*.backup
+*.bak
+*.tmp
+
+# Healthcare compliance - Never commit patient data
+patient-records/
+medical-data/
+*.patient
+*.medical
+hipaa-logs/
+
+# Business sensitive files
+revenue-reports/
+analytics-data/
+customer-lists/
+*.business
+
+# Modern development additions
+.turbo/
+.swc/
+
+# Storybook
+storybook-static/
+
+# Testing
+test-results/
+playwright-report/
+playwright/.cache/
+
+# IDE and editor specific
+.vscode/settings.json
+.vscode/launch.json
+.vscode/extensions.json
+*.code-workspace
+
+# macOS specific
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Linux specific
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+
+# Healthcare platform deployment
+vercel-deployment.log
+netlify-deployment.log
+.deployment/
