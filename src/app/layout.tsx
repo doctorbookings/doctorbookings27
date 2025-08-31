@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   
   // Website Verification - Proves to Google that you own this website
   verification: {
-    google: 'D3QZUaYgSLn0RbESGNslKSCgBvffV9_tGbZS7D7OXUc',
+    google: '3ZVA7CuMqsgLR5sEoimEzoVQl5LB9YRdgnBNV7wa7m0',
   },
   alternates: {
     canonical: 'https://doctorbookings.in'
