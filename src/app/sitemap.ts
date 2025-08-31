@@ -18,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 🔥 IMPORTANT: Replace this with your actual domain after deployment
   // Examples:
   // - If using Vercel: 'https://doctor-bookings-abc123.vercel.app'
-  // - If using custom domain: 'https://doctorbookings.com'
+  // - If using custom domain: 'https://doctorbookings.in'
   const baseUrl = 'https://doctorbookings.in' // 👈 UPDATED WITH YOUR PRODUCTION DOMAIN
   
   return [
