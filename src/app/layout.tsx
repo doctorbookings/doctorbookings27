@@ -5,6 +5,7 @@
 import type { Metadata, Viewport } from "next"
 import "./globals.css"
 import { AnalyticsProvider } from "@/components/providers/AnalyticsProvider"
+import { Analytics } from "@vercel/analytics/next"
 import Script from "next/script"
 
 // SEO Settings - This tells Google and other search engines about your website
@@ -104,6 +105,9 @@ export default function RootLayout({
         <AnalyticsProvider>
           {children} {/* Your actual page content goes here */}
         </AnalyticsProvider>
+        
+        {/* Vercel Analytics - Page view tracking */}
+        <Analytics />
         
         
         {/* Emergency phone preload */}

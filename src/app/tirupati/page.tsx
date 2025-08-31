@@ -322,7 +322,7 @@ export default function TirupatiPage() {
           </div>
         </footer>
 
-        {/* FLOATING CALL BUTTON - Always visible for immediate contact */}
+        {/* FLOATING CALL BUTTON - Always visible for immediate contact *}
         {/* Critical for mobile users who want to call while browsing */}
         <div className="fixed bottom-6 right-6 z-50">
           <PhoneButton
