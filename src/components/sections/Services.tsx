@@ -99,7 +99,7 @@ const services: Service[] = [
       { icon: Brain, text: "Headaches & body aches", color: "text-purple-500" },          // Pain management
       { icon: Ear, text: "Ear infections & runny nose", color: "text-orange-500" },       // ENT conditions
       { icon: ShieldAlert, text: "Skin rashes & allergic reactions", color: "text-pink-500" }, // Dermatological issues
-      { icon: Syringe, text: "Vaccinations at home", color: "text-teal-500" }             // Preventive care
+      { icon: Syringe, text: "Blood Checkups at home", color: "text-teal-500" }             // Preventive care
     ]
   },
   {
