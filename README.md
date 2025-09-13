@@ -70,76 +70,6 @@ Doctor Bookings is a **lead generation website** that connects patients with cer
 }
 ```
 
-## 📞 Business Contact Information
-
-- **Primary Phone**: +91-9182296058
-- **Business Email**: doctorbookings2708@gmail.com
-- **Service Hours**: 24/7 availability
-- **Response Time**: Within 2 minutes of booking
-- **Doctor Arrival**: Within 30 minutes in service areas
-
-## 🚀 Quick Start for Developers
-
-### 1. Clone and Install
-```bash
-git clone https://github.com/YOUR_USERNAME/doctor-bookings-homecare.git
-cd doctor-bookings-homecare
-npm install
-```
-
-### 2. Environment Setup
-```bash
-cp .env.example .env.local
-```
-
-Edit `.env.local` with your credentials:
-```env
-# Business Information
-NEXT_PUBLIC_MAIN_PHONE="+91-9182296058"
-NEXT_PUBLIC_BUSINESS_EMAIL="doctorbookings2708@gmail.com"
-
-# Telegram Integration (for instant booking alerts)
-TELEGRAM_BOT_TOKEN="your_bot_token_here"
-TELEGRAM_CHAT_ID="your_chat_id_here"
-
-# Analytics (optional but recommended)
-NEXT_PUBLIC_GA_ID="G-XXXXXXXXXX"
-NEXT_PUBLIC_CLARITY_ID="your_clarity_id"
-```
-
-### 3. Run Development Server
-```bash
-npm run dev
-```
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-### 4. Test Booking System
-1. Fill out a booking form
-2. Check your Telegram for instant alerts
-3. Verify phone buttons work correctly
-
-## 🔧 Environment Variables Explained
-
-### Required for Basic Functionality
-```env
-NEXT_PUBLIC_MAIN_PHONE="+91-9182296058"     # Your business phone number
-NEXT_PUBLIC_BUSINESS_EMAIL="your@email.com"  # Your business email
-```
-
-### Required for Telegram Alerts (Highly Recommended)
-```env
-TELEGRAM_BOT_TOKEN="123456:ABC-DEF..."       # Get from @BotFather on Telegram
-TELEGRAM_CHAT_ID="123456789"                 # Your Telegram chat ID
-```
-
-### Optional (for Analytics)
-```env
-NEXT_PUBLIC_GA_ID="G-XXXXXXXXXX"             # Google Analytics 4 ID
-NEXT_PUBLIC_CLARITY_ID="abc123def"           # Microsoft Clarity ID
-```
-
-**📋 Setup Guide**: See `DEPLOYMENT_GUIDE.md` for step-by-step instructions.
-
 ## 📊 Business Analytics & Tracking
 
 ### What Gets Tracked
@@ -170,12 +100,6 @@ NEXT_PUBLIC_CLARITY_ID="abc123def"           # Microsoft Clarity ID
 - **Custom Domain**: Supported
 - **Auto-deploys**: From GitHub
 
-### Alternative: Netlify
-- **Cost**: Free tier available
-- **Setup Time**: 15 minutes
-- **Features**: Similar to Vercel
-
-**📋 Complete Guide**: See `VERCEL_DEPLOYMENT_GUIDE.md` for non-technical step-by-step instructions.
 
 ## 💼 How This Makes Money
 
@@ -265,9 +189,3 @@ src/
 2. Modify booking form options
 3. Adjust pricing in business model
 4. Update website copy and SEO
-
----
-
-**🏥 Made with ❤️ for better healthcare accessibility in Andhra Pradesh**
-
-**🚀 Ready to deploy? See `VERCEL_DEPLOYMENT_GUIDE.md` for step-by-step instructions.**

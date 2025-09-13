@@ -14,7 +14,7 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Poojitha",
+    name: "Divya",
     role: "Daughter for 72-year-old mother",
     rating: 5,
     comment: "My mother was hesitant to go to the hospital for her routine check-up. Dr. varun from Doctor Bookings was so patient and thorough. She felt comfortable throughout the examination.",
@@ -23,16 +23,16 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 2,
-    name: "P. Leeladhar",
+    name: "Rohan",
     role: "Father of 3-year-old",
     rating: 5,
-    comment: "My 3-year-old had high fever at midnight. Dr. varun arrived within 30 minutes with all equipment. She was gentle and explained everything clearly.",
+    comment: "My 3-year-old had high fever at midnight. Dr. varun arrived within 30 minutes with all equipment.He was gentle and explained everything clearly.",
     serviceType: "Pediatric emergency",
     serviceColor: "bg-blue-100 text-blue-800"
   },
   {
     id: 3,
-    name: "Lavanya",
+    name: "Ananya",
     role: "Post-surgery patient",
     rating: 5,
     comment: "After my knee surgery, daily wound dressing was needed. Dr. varun came every morning and monitored healing progress excellently.",
