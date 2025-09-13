@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useCallback } from "react"
 import { ChevronDown, ChevronUp } from "lucide-react"
 
 interface FAQItem {
@@ -55,9 +55,9 @@ const faqData: FAQItem[] = [
 export default function FAQSection() {
   const [openFAQ, setOpenFAQ] = useState<string | null>(null)
 
-  const toggleFAQ = (id: string) => {
-    setOpenFAQ(openFAQ === id ? null : id)
-  }
+  const toggleFAQ = useCallback((id: string) => {
+    setOpenFAQ(prev => prev === id ? null : id)
+  }, [])
 
   return (
     <section className="py-8 md:py-12 bg-white">

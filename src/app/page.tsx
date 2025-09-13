@@ -331,33 +331,18 @@ export default function DoctorBookings() {
           </PhoneButton>
         </div>
 
-        {/* SEO Structured Data - App Router compatible */}
+        {/* Combined SEO Structured Data - Optimized for performance */}
         <Script
-          id="faq-schema"
+          id="combined-schema"
           type="application/ld+json"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(faqSchema)
-          }}
-        />
-        <Script
-          id="local-business-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(localBusinessSchema)
-          }}
-        />
-        <Script
-          id="organization-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema)
-          }}
-        />
-        <Script
-          id="website-schema"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(websiteSchema)
+            __html: JSON.stringify([
+              faqSchema,
+              localBusinessSchema,
+              organizationSchema,
+              websiteSchema
+            ])
           }}
         />
       </div>

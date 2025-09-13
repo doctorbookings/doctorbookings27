@@ -44,55 +44,53 @@ interface PhoneButtonProps {
   city?: string
 }
 
-// Phone Click Handler - What happens when someone clicks "Call Now"
-// This is CRITICAL for your business - it means someone wants to call you!
-const handlePhoneClick = async (phoneNumber: string, source: string, city?: string) => {
-  // Track this click for business analytics
-  analytics.trackPhoneClick(city, source);
-  
-  // HIPAA-Compliant: Prepare non-sensitive data for alert
-  const clickData = {
-    city: city || 'Unknown Location',
-    phoneNumber,                        // Your business number they're calling
-    timestamp: new Date().toISOString(), // Exact time they clicked
-    userAgent: navigator.userAgent,     // What device they're using
-    source: source || 'phone_button'    // Which button they clicked
-  };
-  
-  // HIPAA-Compliant: Store only non-sensitive click metadata
-  const clickMetadata = {
-    timestamp: clickData.timestamp,
-    city: clickData.city,
-    source: clickData.source,
-    device: clickData.userAgent.includes('Mobile') ? 'mobile' : 'desktop'
-  };
-  
-  try {
-    const existingMetadata = JSON.parse(localStorage.getItem('phone_click_metadata') || '[]');
-    existingMetadata.push(clickMetadata);
-    localStorage.setItem('phone_click_metadata', JSON.stringify(existingMetadata.slice(-10))); // Keep last 10
-  } catch (error) {
-    // Silent fail for localStorage issues
-  }
-  
-  // Send you an instant Telegram alert - "Someone just clicked Call Now!"
-  try {
-    const { sendLeadAlert } = await import('@/lib/integrations/telegram');
-    await sendLeadAlert({
-      name: 'Phone Call Request',
-      phone: 'Direct Call',
-      age: '',
-      city: clickData.city,
-      service: 'Phone Call',
-      timestamp: clickData.timestamp,
-      source: 'phone_click'
-    });
-  } catch (error) {
-    // Phone click alert failed - error handled silently
-  }
-  
-  // Actually make the phone call (opens phone app on mobile, dialer on desktop)
+// Optimized Phone Click Handler - Non-blocking performance
+const handlePhoneClick = (phoneNumber: string, source: string, city?: string) => {
+  // Immediately initiate phone call for best UX
   window.location.href = `tel:${phoneNumber}`;
+  
+  // Defer analytics and alerts to avoid blocking UI
+  setTimeout(() => {
+    // Track this click for business analytics (non-blocking)
+    try {
+      analytics.trackPhoneClick(city, source);
+    } catch (error) {
+      // Silent fail for analytics
+    }
+    
+    // HIPAA-Compliant: Store only non-sensitive click metadata (non-blocking)
+    try {
+      const clickMetadata = {
+        timestamp: new Date().toISOString(),
+        city: city || 'Unknown Location',
+        source: source || 'phone_button',
+        device: navigator.userAgent.includes('Mobile') ? 'mobile' : 'desktop'
+      };
+      
+      const existingMetadata = JSON.parse(localStorage.getItem('phone_click_metadata') || '[]');
+      existingMetadata.push(clickMetadata);
+      localStorage.setItem('phone_click_metadata', JSON.stringify(existingMetadata.slice(-10)));
+    } catch (error) {
+      // Silent fail for localStorage issues
+    }
+    
+    // Send Telegram alert asynchronously (non-blocking)
+    import('@/lib/integrations/telegram').then(({ sendLeadAlert }) => {
+      sendLeadAlert({
+        name: 'Phone Call Request',
+        phone: 'Direct Call',
+        age: '',
+        city: city || 'Unknown Location',
+        service: 'Phone Call',
+        timestamp: new Date().toISOString(),
+        source: 'phone_click'
+      }).catch(() => {
+        // Silent fail for telegram alert
+      });
+    }).catch(() => {
+      // Silent fail for import
+    });
+  }, 0);
 };
 
 // Main Phone Button Function - Creates a clickable call button

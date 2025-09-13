@@ -24,7 +24,7 @@
  */
 
 "use client" // This component needs browser features like form submission
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useMemo, useTransition } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -76,6 +76,8 @@ export function LeadCaptureForm({
   const [showDropdown, setShowDropdown] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
   const [submitAttempted, setSubmitAttempted] = useState(false)
+  const [isPending, startTransition] = useTransition()
+  const [validationTimeout, setValidationTimeout] = useState<NodeJS.Timeout | null>(null)
 
   // FORM RESET LOGIC - Clears all data when the booking dialog closes
   // This ensures each new booking starts with a clean form
@@ -129,6 +131,7 @@ export function LeadCaptureForm({
     }
   }, [])
 
+  // Memoized form validation for better performance
   const validateForm = useCallback((): boolean => {
     const newErrors: FormErrors = {}
     let isValid = true
@@ -146,6 +149,15 @@ export function LeadCaptureForm({
     setErrors(newErrors)
     return isValid
   }, [formData, validateField])
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (validationTimeout) {
+        clearTimeout(validationTimeout)
+      }
+    }
+  }, [validationTimeout])
 
   // FORM SUBMISSION HANDLER - Processes the booking request
   // This function:
@@ -225,28 +237,46 @@ export function LeadCaptureForm({
     }
   }
 
-  // INPUT CHANGE HANDLER - Updates form data and validates in real-time
+  // INPUT CHANGE HANDLER - Updates form data with debounced validation
   // Provides immediate feedback to users as they fill out the form
-  const handleInputChange = (field: keyof FormData, value: string) => {
+  const handleInputChange = useCallback((field: keyof FormData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }))
     
-    // Clear field error and validate on blur if form was attempted
-    if (submitAttempted) {
-      const error = validateField(field, value)
-      setErrors(prev => ({ ...prev, [field]: error, general: undefined }))
+    // Clear field error immediately for better UX
+    if (submitAttempted && errors[field]) {
+      setErrors(prev => ({ ...prev, [field]: undefined, general: undefined }))
     }
-  }
+    
+    // Debounced validation to reduce re-renders
+    if (submitAttempted) {
+      if (validationTimeout) {
+        clearTimeout(validationTimeout)
+      }
+      
+      const timeout = setTimeout(() => {
+        startTransition(() => {
+          const error = validateField(field, value)
+          setErrors(prev => ({ ...prev, [field]: error }))
+        })
+      }, 300) // 300ms debounce
+      
+      setValidationTimeout(timeout)
+    }
+  }, [submitAttempted, errors, validationTimeout, validateField])
 
-  // Mobile scroll handler for input focus
+  // Optimized mobile scroll handler for input focus
   const handleInputFocus = useCallback((event: React.FocusEvent<HTMLInputElement>) => {
     // Only apply on mobile devices (below 1024px)
     if (window.innerWidth < 1024) {
-      setTimeout(() => {
-        event.target.scrollIntoView({ 
-          behavior: 'smooth', 
-          block: 'center' 
-        })
-      }, 300) // Wait for keyboard to appear
+      // Use requestAnimationFrame for better performance
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          event.target.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'center' 
+          })
+        }, 300) // Wait for keyboard to appear
+      })
     }
   }, [])
 
