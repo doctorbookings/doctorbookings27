@@ -55,12 +55,12 @@ export function Hero() {
                 id="hero-heading"  // Accessibility identifier
                 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-blue-600 mb-6 text-left md:text-center"
               >
-                Certified Doctors at Your Doorstep <span className="text-green-600">in under 30 minutes</span>
+                Certified MBBS Doctors at Your Doorstep — <span className="text-green-600">Home Visits in 30 Minutes</span>
                 {/* This headline promises: Qualified doctors + Home service + Fast delivery */}
               </h1>
               {/* Subheadline - Explains the simple process */}
               <p className="text-xl md:text-3xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed text-left md:text-center">
-                Tell us your symptoms, we'll call you within 2 minutes to confirm details and send a certified doctor to your home within 30 minutes.
+                Get a home visit doctor near you — tell us your symptoms, we'll call within 2 minutes and send a certified doctor to your home. Serving Vizag, Tirupati & Kakinada.
                 {/* Clear process: 1) Tell symptoms 2) We call back 3) Doctor arrives */}
               </p>
               {/* Action Buttons - Primary ways for customers to contact you */}

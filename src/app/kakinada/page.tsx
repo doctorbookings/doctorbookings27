@@ -26,42 +26,39 @@ import type { Metadata } from "next"
 
 // SEO METADATA - Optimized for Kakinada local search results
 export const metadata: Metadata = {
-  title: 'Doctor Home Visits Kakinada | 24/7 MBBS Doctors | Port Area Coverage',
-  description: 'Book certified MBBS doctors for home visits in Kakinada within 30 minutes. Suryaraopet, Gandhinagar, Jagannadhapuram, Port Area coverage. Emergency medical care at home.',
+  title: 'Doctor Home Visit Kakinada | 24/7 MBBS Doctors | Healthcare at Home',
+  description: 'Book MBBS doctors for home visits in Kakinada. Healthcare at home — senior care, post-surgery care, elder care. Suryaraopet, Gandhinagar, Port Area. Available 24/7 for urgent & non-emergency visits.',
   keywords: [
-    'doctor home visit kakinada', 'home doctor kakinada', 'emergency doctor kakinada',
-    'MBBS doctor kakinada', 'doctor suryaraopet', 'medical care kakinada',
-    'doctor gandhinagar kakinada', 'port area medical care', 'home healthcare kakinada',
-    'certified doctor kakinada', 'doctor visit jagannadhapuram', 'medical service kakinada port'
+    'doctor home visit kakinada', 'physician kakinada', 'healthcare at home in kakinada',
+    'post surgery care at home in kakinada', 'home health care services in kakinada',
+    'senior care services in kakinada', 'elder care services in kakinada',
+    'general physician near me kakinada', 'best physician kakinada', 'kakinada doctor',
+    'doctors in kakinada', 'post operative care in kakinada', 'home doctor kakinada',
+    'physiotherapy services at home in kakinada', 'MBBS doctor kakinada',
+    'physician near me kakinada', 'certified doctor kakinada', 'home healthcare kakinada'
   ],
   openGraph: {
-    title: 'Doctor Home Visits Kakinada - Port City Medical Care',
-    description: 'Certified MBBS doctors at your doorstep in Kakinada. Suryaraopet, Gandhinagar, Port Area coverage.',
-        url: 'https://doctorbookings.in/kakinada',
+    title: 'Doctor Home Visit Kakinada | MBBS Doctors at Your Doorstep',
+    description: 'Book certified MBBS doctors for home visits in Kakinada. Healthcare at home within 30 minutes. Available 24/7.',
+    url: 'https://doctorbookings.in/kakinada',
     siteName: 'Doctor Bookings',
-    images: [{
-      url: '/kakinada-doctor-home-visit.jpg',
-      width: 1200,
-      height: 630,
-      alt: 'Doctor Home Visits in Kakinada - Port city medical services'
-    }],
     locale: 'en_IN',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Doctor Home Visits Kakinada - Book Now',
-    description: 'Certified doctors at your doorstep in Kakinada within 30 minutes',
-    images: ['/kakinada-doctor-home-visit.jpg'],
+    title: 'Doctor Home Visit Kakinada | 24/7 MBBS Doctors',
+    description: 'Certified doctors at your doorstep in Kakinada within 30 minutes. Available 24/7.',
   },
   alternates: {
-        canonical: 'https://doctorbookings.in/kakinada'
+    canonical: 'https://doctorbookings.in/kakinada'
   }
 }
 import { Button } from "@/components/ui/button"
 import { BookingDialog } from "@/components/forms/BookingDialog"
 import { Card, CardContent } from "@/components/ui/card"
 import { Header } from "@/components/layout/Header"
+import { Footer } from "@/components/layout/Footer"
 import { HeroPhoneButton, CTAPhoneButton, PhoneButton } from "@/components/ui/PhoneButton"
 import {
   Stethoscope,
@@ -124,10 +121,10 @@ export default function KakinadaPage() {
                   </div>
                 </div>
                 <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-green-600 mb-6 text-left md:text-center">
-                  Book Certified Doctors for Home Visit <span className="text-blue-600">in Kakinada</span>
+                  Doctor Home Visit in Kakinada — <span className="text-blue-600">Healthcare at Your Doorstep</span>
                 </h1>
                 <p className="text-xl md:text-3xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed text-left md:text-center">
-                  Get certified doctors at your doorstep in Kakinada within 30 minutes. Skip hospital visits - we bring quality healthcare to your home.
+                  Get a certified doctor at your doorstep in Kakinada within 30 minutes. Skip hospital visits — we bring quality healthcare to your home.
                 </p>
                 <p className="text-base text-gray-500 mb-12 max-w-3xl mx-auto text-left md:text-center">
                   <span className="font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">
@@ -159,7 +156,6 @@ export default function KakinadaPage() {
           <ServicesSection />
         </div>
 
-        
 
         {/* HOW IT WORKS SECTION - Explains the booking process for Kakinada */}
         {/* Customized with Kakinada-specific messaging and response times */}
@@ -167,9 +163,9 @@ export default function KakinadaPage() {
           <div className="container px-4 md:px-6">
             <div className="max-w-4xl mx-auto text-center mb-16">
               <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl text-green-600 mb-6">
-                How It Works in Kakinada
+                How to Book a Doctor for Home Visit in Kakinada
               </h2>
-              <p className="text-xl text-gray-600">Professional medical care in just 3 simple steps</p>
+              <p className="text-xl text-gray-600">Comprehensive home health care services in Kakinada — from general physician consultations to senior care, in just 3 simple steps</p>
             </div>
 
             <div className="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto">
@@ -184,7 +180,7 @@ export default function KakinadaPage() {
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Book/Call in 5 Seconds</h3>
                 <p className="text-gray-600">
-                  Quick online booking. Tell us your symptoms and preferred time in Kakinada.
+                  Quick online booking for home visits. Need a general physician in Kakinada, post-surgery care, or elder care? Tell us your symptoms and preferred time.
                 </p>
               </div>
 
@@ -199,7 +195,7 @@ export default function KakinadaPage() {
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Doctor Arrives Fast</h3>
                 <p className="text-gray-600">
-                  MBBS certified doctor reaches you within 30 minutes with medical equipment in Kakinada.
+                  Certified doctor reaches you within 30 minutes with medical equipment. Available for post-operative care and senior healthcare at home in Kakinada.
                 </p>
               </div>
 
@@ -214,7 +210,7 @@ export default function KakinadaPage() {
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Safe Care at Home</h3>
                 <p className="text-gray-600">
-                  Complete examination, diagnosis, prescription, and follow-up - all at home in Kakinada.
+                  Complete examination, diagnosis, prescription, and follow-up — all at home. Perfect for senior care services and chronic condition monitoring in Kakinada.
                 </p>
               </div>
             </div>
@@ -241,83 +237,7 @@ export default function KakinadaPage() {
 
         {/* FOOTER SECTION - Kakinada-specific contact info and navigation */}
         {/* Contains local contact details and links to other city pages */}
-        <footer className="bg-gray-900 text-white py-12">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-4 gap-8">
-              <div>
-                <div className="flex items-center space-x-2 mb-4">
-                  <Stethoscope className="h-8 w-8 text-blue-400" />
-                  <Link href="/" className="text-2xl font-bold hover:text-blue-400 transition-colors">
-                    Doctor Bookings
-                  </Link>
-                </div>
-                <p className="text-gray-400 mb-4">
-                  Bringing quality healthcare to your doorstep in Kakinada. MBBS-certified doctors available 24/7.
-                </p>
-                <div className="flex flex-col space-y-2">
-                  <Link href="/" className="text-blue-400 hover:text-blue-300 transition-colors flex items-center">
-                    <Home className="h-4 w-4 mr-2" />
-                    Back to Main Page
-                  </Link>
-                  <Link href="/vizag" className="text-gray-400 hover:text-white transition-colors">
-                    Doctor Bookings Vizag
-                  </Link>
-                  <Link href="/tirupati" className="text-gray-400 hover:text-white transition-colors">
-                    Doctor Bookings Tirupati
-                  </Link>
-                </div>
-              </div>
-
-              <div>
-                <h4 className="text-lg font-semibold mb-4">Services in Kakinada</h4>
-                <ul className="space-y-2 text-gray-400">
-                  <li>Family Healthcare</li>
-                  <li>Senior Healthcare</li>
-                  <li>Recovery Healthcare</li>
-                  <li>Emergency Visits</li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="text-lg font-semibold mb-4">Areas We Serve</h4>
-                <ul className="space-y-2 text-gray-400">
-                  <li>Suryaraopet</li>
-                  <li>Gandhinagar</li>
-                  <li>Jagannadhapuram</li>
-                  <li>Ramanayyapeta</li>
-                  <li>Vakalapudi</li>
-                  <li>Sarpavaram</li>
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="text-lg font-semibold mb-4">Contact Kakinada</h4>
-                <div className="space-y-2 text-gray-400">
-                  <a href="tel:9182296058" className="flex items-center hover:text-white transition-colors">
-                    📞 9182296058
-                  </a>
-                  <p>📧 doctorbookings2708@gmail.com</p>
-                  <p>📍 Kakinada, Andhra Pradesh</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                            <p>&copy; 2025 Doctor Bookings. All rights reserved. | Serving Kakinada with quality healthcare.</p>
-              <div className="mt-4 flex justify-center space-x-6">
-                <Link href="/" className="hover:text-white transition-colors">
-                  Main Page
-                </Link>
-                <Link href="/vizag" className="hover:text-white transition-colors">
-                  Vizag
-                </Link>
-                <Link href="/tirupati" className="hover:text-white transition-colors">
-                  Tirupati
-                </Link>
-              </div>
-            </div>
-          </div>
-        </footer>
+        <Footer />
 
         {/* FLOATING CALL BUTTON - Always visible for immediate contact */}
         {/* Critical for mobile users who want to call while browsing */}

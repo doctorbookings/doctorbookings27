@@ -12,8 +12,8 @@ export function Pain() {
       <div className="container px-4 md:px-6">
         <div className="max-w-4xl mx-auto text-center mb-8">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-gray-900 mb-6">
-            <span className="text-black">Can't visit hospital</span> due to health issues?{" "}
-            <span className="text-red-600">we bring doctors to your home.</span>
+            <span className="text-black">Can't Visit a Hospital?</span>{" "}
+            <span className="text-red-600">We Bring Certified Doctors to Your Home</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-12">
             We understand the stress and challenges families face when seeking medical care, especially for elderly

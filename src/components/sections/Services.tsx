@@ -172,11 +172,10 @@ export default function ServicesSection({ onBookingClick }: ServicesSectionProps
         {/* Section Header - Explains your comprehensive medical services */}
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-green-600 mb-6">
-            Services we offer
+            Doctor Home Visit Services We Offer
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Our certified doctors and healthcare professionals bring hospital-quality treatment directly to your
-            doorstep
+            Our certified doctors bring hospital-quality treatment directly to your doorstep — available for home visits in Vizag, Tirupati & Kakinada
           </p>
         </div>
 
@@ -220,7 +219,7 @@ export default function ServicesSection({ onBookingClick }: ServicesSectionProps
                   
                   {/* TARGET AUDIENCE BADGE - Who this service is designed for */}
                   <div className="text-center">
-                    <span className={`inline-block text-xs font-semibold ${service.textColor} bg-white px-4 py-2 rounded-lg shadow-sm border ${service.borderColor}`}>
+                    <span className={`inline-block text-xs font-semibold text-gray-800 bg-white px-4 py-2 rounded-lg shadow-sm border ${service.borderColor}`}>
                       {service.targetAudience}
                     </span>
                   </div>

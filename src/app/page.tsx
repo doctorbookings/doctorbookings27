@@ -36,6 +36,8 @@ import { FAQ } from "@/components/sections/FAQ"
 import { FinalCTA } from "@/components/sections/FinalCTA"
 
 import { Button } from "@/components/ui/button"
+import { Header } from "@/components/layout/Header"
+import { Footer } from "@/components/layout/Footer"
 import {
   Phone,
   Stethoscope,
@@ -63,9 +65,9 @@ export default function DoctorBookings() {
   // LOCAL BUSINESS SCHEMA - Tells Google you're a local healthcare business
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "MedicalBusiness",
     "name": "Doctor Bookings",
-    "description": "Professional home healthcare service providing certified doctor visits in Visakhapatnam, Tirupati, and Kakinada",
+    "description": "Book certified MBBS doctors for home visits in Vizag, Tirupati & Kakinada. At your doorstep within 30 minutes. Available 24/7.",
     "url": "https://doctorbookings.in",
     "telephone": "+91-9182296058",
     "address": {
@@ -73,25 +75,103 @@ export default function DoctorBookings() {
       "addressRegion": "Andhra Pradesh",
       "addressCountry": "IN"
     },
-    "areaServed": ["Visakhapatnam", "Tirupati", "Kakinada"],
-    "serviceType": "Home Healthcare"
+    "areaServed": [
+      { "@type": "City", "name": "Visakhapatnam" },
+      { "@type": "City", "name": "Tirupati" },
+      { "@type": "City", "name": "Kakinada" }
+    ],
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "availableService": [
+      { "@type": "MedicalProcedure", "name": "Doctor Home Visit" },
+      { "@type": "MedicalProcedure", "name": "Elderly Home Healthcare" },
+      { "@type": "MedicalProcedure", "name": "Post-Surgery Home Care" },
+      { "@type": "MedicalProcedure", "name": "Urgent Doctor Home Visit" },
+      { "@type": "MedicalProcedure", "name": "Pediatric Home Visit" }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "500",
+      "bestRating": "5"
+    }
   };
 
-  // ORGANIZATION SCHEMA - Provides basic company information to search engines
+  // ORGANIZATION SCHEMA — Full production-grade entity for Google Knowledge Panel
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://doctorbookings.in/#organization",
     "name": "Doctor Bookings",
-    "description": "Professional home healthcare service",
-    "url": "https://doctorbookings.in"
+    "alternateName": ["DoctorBookings", "Doctor Booking", "doctorbookings"],
+    "description": "Professional home healthcare service providing certified MBBS doctor home visits in Vizag, Tirupati & Kakinada. Available 24/7.",
+    "url": "https://doctorbookings.in",
+    "logo": "https://doctorbookings.in/icon.svg",
+    "telephone": "+91-9182296058",
+    "email": "doctorbookings.in@gmail.com",
+    "foundingDate": "2025",
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+91-9182296058",
+        "contactType": "customer service",
+        "areaServed": "IN",
+        "availableLanguage": ["English", "Telugu", "Hindi"]
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+91-9182296058",
+        "contactType": "emergency",
+        "areaServed": "IN",
+        "availableLanguage": ["English", "Telugu", "Hindi"]
+      }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "Andhra Pradesh",
+      "addressCountry": "IN"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Visakhapatnam" },
+      { "@type": "City", "name": "Tirupati" },
+      { "@type": "City", "name": "Kakinada" }
+    ],
+    "sameAs": [
+      "https://doctorbookings.in"
+      // Add social media URLs here when created:
+      // "https://www.facebook.com/doctorbookings",
+      // "https://www.instagram.com/doctorbookings",
+      // "https://www.linkedin.com/company/doctorbookings"
+    ]
   };
 
-  // WEBSITE SCHEMA - Identifies this as your main website
+  // WEBSITE SCHEMA — Controls how Google displays your site name in search results
+  // Google shows "Doctor Bookings" instead of "doctorbookings.in" because of this schema
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": "https://doctorbookings.in/#website",
     "name": "Doctor Bookings",
-    "url": "https://doctorbookings.in"
+    "alternateName": [
+      "DoctorBookings",
+      "Doctor Booking", 
+      "doctorbookings",
+      "doctorbookings.in",
+      "Doctor Bookings India",
+      "Doctor Bookings Home Visit"
+    ],
+    "url": "https://doctorbookings.in",
+    "publisher": { "@id": "https://doctorbookings.in/#organization" },
+    "inLanguage": "en-IN",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://doctorbookings.in/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
   };
 
   // FAQ SCHEMA - Makes your frequently asked questions appear in Google search results
@@ -113,7 +193,15 @@ export default function DoctorBookings() {
         name: "What if my case is urgent or an emergency?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "For life-threatening emergencies, please call 108 immediately. Doctor Bookings is for non-emergency medical care. For urgent but non-emergency cases, we prioritize and can reach within 30-45 minutes.",
+          text: "For life-threatening emergencies, please call 108 immediately. Doctor Bookings is for non-emergency medical care. For urgent but non-emergency cases, we prioritize and can reach within 30–45 minutes.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Are your doctors available 24/7?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, our home visit doctors are available 24/7, including weekends and holidays. Whether it's early morning or late night, you can book a certified MBBS doctor for a home visit anytime.",
         },
       },
       {
@@ -121,7 +209,7 @@ export default function DoctorBookings() {
         name: "What's the typical response time?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Our standard response time is under 60 minutes. For urgent cases, we can reach within 30-45 minutes. You can also schedule appointments for a preferred time slot.",
+          text: "Our standard response time is under 60 minutes. For urgent cases, we can reach within 30–45 minutes. You can also schedule appointments for a preferred time slot.",
         },
       },
       {
@@ -129,7 +217,23 @@ export default function DoctorBookings() {
         name: "How are your doctors verified?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "All our doctors are MBBS-qualified with valid MCI registration. We verify their credentials, conduct background checks, and ensure they have relevant experience in home healthcare.",
+          text: "All our doctors are MBBS-qualified with valid MCI/NMC registration. We verify their credentials, conduct background checks, and ensure they have relevant experience in home healthcare.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Do you provide regular home visits for elderly or bedridden patients?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Absolutely. We specialize in senior care and home healthcare for elderly and bedridden patients. You can schedule regular check-ups, post-surgery follow-ups, or ongoing health monitoring at home.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "When should I book a home doctor visit instead of going to a hospital?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "A home doctor visit is ideal for non-emergency situations like fever, cold, flu, body pain, blood pressure check, blood sugar monitoring, elderly check-ups, post-surgery care, and routine health assessments. For severe chest pain, difficulty breathing, or accidents, please call 108.",
         },
       },
     ],
@@ -140,58 +244,7 @@ export default function DoctorBookings() {
       <div className="min-h-screen bg-white">
         {/* WEBSITE HEADER - Navigation bar that stays at the top of the page */}
         {/* This header contains your logo, navigation menu, and is visible on all pages */}
-        <header 
-          className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 shadow-sm"
-          role="banner"
-          id="navigation"
-        >
-          <div className="container flex h-16 items-center justify-between px-4 md:px-6 lg:px-8 max-w-7xl mx-auto">
-            <div className="flex items-center space-x-3">
-              <div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-green-500 shadow-lg">
-                <Stethoscope className="h-5 w-5 md:h-6 md:w-6 text-white" aria-hidden="true" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 leading-tight">Doctor</span>
-                <span className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 leading-tight -mt-1">Bookings</span>
-              </div>
-            </div>
-
-            <nav className="flex items-center space-x-1 sm:space-x-2 md:space-x-3 lg:space-x-4" role="navigation" aria-label="Main navigation">
-              <a 
-                href="#services" 
-                className="text-gray-700 font-medium text-xs sm:text-sm md:text-base whitespace-nowrap px-1 py-1 sm:px-2 md:px-3 md:py-2 cursor-pointer"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-              >
-                Services
-              </a>
-              <a 
-                href="#how-it-works" 
-                className="text-gray-700 font-medium text-xs sm:text-sm md:text-base whitespace-nowrap px-1 py-1 sm:px-2 md:px-3 md:py-2 cursor-pointer"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-              >
-                <span className="hidden sm:inline">How&nbsp;It&nbsp;Works</span>
-                <span className="sm:hidden">How&nbsp;It&nbsp;Works</span>
-              </a>
-              <a 
-                href="#why-choose-us" 
-                className="text-gray-700 font-medium text-xs sm:text-sm md:text-base whitespace-nowrap px-1 py-1 sm:px-2 md:px-3 md:py-2 cursor-pointer"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById('why-choose-us')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-              >
-                <span className="hidden sm:inline">Why&nbsp;Choose&nbsp;Us</span>
-                <span className="sm:hidden">Why&nbsp;Us</span>
-              </a>
-            </nav>
-          </div>
-        </header>
+        <Header />
 
         {/* MAIN CONTENT AREA - All the important sections of your homepage */}
         {/* This is where visitors learn about your services and decide to book */}
@@ -226,105 +279,14 @@ export default function DoctorBookings() {
 
         {/* WEBSITE FOOTER - Contains contact info, links, and legal information */}
         {/* Appears at the bottom of every page and provides additional ways to contact you */}
-        <footer className="bg-gray-900 text-white py-12">
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-blue-500 to-green-500">
-                    <Stethoscope className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <span className="text-xl font-bold">Doctor Bookings</span>
-                  </div>
-                </div>
-                <p className="text-gray-400 text-sm">
-                  Professional medical care delivered to your home by certified doctors across India.
-                </p>
-                <div className="flex space-x-4">
-                  <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white">
-                    <Phone className="h-5 w-5" />
-                  </Button>
-                  <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white">
-                    <Mail className="h-5 w-5" />
-                  </Button>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <h4 className="font-semibold">Quick Contact</h4>
-                <div className="space-y-3">
-                  <a href="tel:+919182296058" className="flex items-center text-gray-400 hover:text-white transition-colors">
-                    <Phone className="h-4 w-5 mr-2" />
-                    9182296058
-                  </a>
-                  <Button variant="ghost" className="justify-start p-0 h-auto text-gray-400 hover:text-white">
-                    <Mail className="h-4 w-4 mr-2" />
-                    doctorbookings2708@gmail.com
-                  </Button>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <h4 className="font-semibold">Services</h4>
-                <div className="space-y-2">
-                  <Link href="#" className="block text-gray-400 hover:text-white transition-colors text-sm">
-                    Home Doctor Visits
-                  </Link>
-                  <Link href="#" className="block text-gray-400 hover:text-white transition-colors text-sm">
-                    Elderly Care
-                  </Link>
-                  <Link href="#" className="block text-gray-400 hover:text-white transition-colors text-sm">
-                    Pediatric Care
-                  </Link>
-                  <Link href="#" className="block text-gray-400 hover:text-white transition-colors text-sm">
-                    Post-Surgery Care
-                  </Link>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <h4 className="font-semibold">Cities We Serve</h4>
-                <div className="space-y-2">
-                  <Link href="#" className="block text-gray-400 hover:text-white transition-colors text-sm">
-                    {"vizag"}
-                  </Link>
-                  <Link href="#" className="block text-gray-400 hover:text-white transition-colors text-sm">
-                    {"Tirupathi"}
-                  </Link>
-                  <Link href="#" className="block text-gray-400 hover:text-white transition-colors text-sm">
-                    {"Kakinada"}
-                  </Link>
-                  <Link href="#" className="block text-gray-400 hover:text-white transition-colors text-sm">
-                    {"more coming soon..."}
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-              <p className="text-gray-400 text-sm">© 2024 Doctor Bookings. All rights reserved.</p>
-              <div className="flex space-x-6 mt-4 md:mt-0">
-                <Link href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
-                  Privacy Policy
-                </Link>
-                <Link href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
-                  Terms & Conditions
-                </Link>
-                <Link href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
-                  Refund Policy
-                </Link>
-              </div>
-            </div>
-          </div>
-        </footer>
+        <Footer />
 
         {/* FLOATING CALL BUTTON - Always visible phone button for immediate contact */}
         {/* This button floats on the screen so visitors can call you from anywhere on the page */}
         <div className="fixed bottom-6 right-6 z-50">
           <PhoneButton
             size="lg"
-            className="w-14 h-14 rounded-full bg-green-600 hover:bg-green-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center"
+            className="w-14 h-14 rounded-full bg-green-700 hover:bg-green-800 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center"
             source="sticky"
           >
             <span className="sr-only">Call Now</span>

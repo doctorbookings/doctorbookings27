@@ -7,47 +7,42 @@ import "./globals.css"
 import { AnalyticsProvider } from "@/components/providers/AnalyticsProvider"
 import { Analytics } from "@vercel/analytics/next"
 import { SpeedInsights } from "@vercel/speed-insights/next"
-import Script from "next/script"
 
 // SEO Settings - This tells Google and other search engines about your website
 // These settings help your website appear in search results when people look for doctors
 export const metadata: Metadata = {
   // Base URL for all relative URLs in metadata (fixes Next.js warning)
   metadataBase: new URL('https://doctorbookings.in'),
-  title: 'Doctor Bookings - Doctor Home Visits in Vizag, Tirupati & Kakinada',
-  description: 'Book certified doctors for home visits in Visakhapatnam, Tirupati, and Kakinada. Professional medical care at your doorstep within 30 minutes.',
-  keywords: ['doctor home visits', 'healthcare', 'medical services', 'vizag', 'tirupati', 'kakinada', 'home healthcare', 'certified doctors', 'MBBS', 'elderly care', 'pediatric care'],
+  title: 'Doctor Home Visit Near Me | 24/7 MBBS Doctors at Doorstep - Doctor Bookings',
+  description: 'Book a certified MBBS doctor for home visit in Vizag, Tirupati & Kakinada. Home visit doctors near you — at your doorstep within 30 minutes. Available 24/7 for urgent & non-emergency visits.',
+  keywords: ['doctor home visit', 'home visit doctor near me', 'doctor home visit near me', 'home visit doctors near me', 'book doctor home visit', 'doctor on call home visit', 'doctor at doorstep', '24/7 doctor home visit', 'home healthcare', 'doctor booking', 'certified MBBS doctors', 'vizag', 'tirupati', 'kakinada', 'elderly care', 'senior care', 'home visit doctor'],
   authors: [{ name: 'Doctor Bookings' }],
   creator: 'Doctor Bookings',
   publisher: 'Doctor Bookings',
+  applicationName: 'Doctor Bookings',
   robots: 'index, follow',
+  other: {
+    'application-name': 'Doctor Bookings',
+  },
   
-  // Social Media Sharing Settings - When someone shares your website on Facebook/WhatsApp
-  // these settings control what image and text appears
+  // Social Media Sharing Settings
   openGraph: {
     type: 'website',
     locale: 'en_IN',
     url: 'https://doctorbookings.in',
-    title: 'Doctor Bookings - Certified Doctors at Your Doorstep',
-    description: 'Professional medical care delivered to your home by certified MBBS doctors in Vizag, Tirupati & Kakinada. Book now for immediate healthcare assistance.',
+    title: 'Doctor Home Visit | MBBS Doctors at Your Doorstep in 30 Minutes',
+    description: 'Book a certified MBBS doctor for home visit in Vizag, Tirupati & Kakinada. At your doorstep within 30 minutes. Available 24/7.',
     siteName: 'Doctor Bookings',
-    images: [{
-      url: '/og-image.jpg',
-      width: 1200,
-      height: 630,
-      alt: 'Doctor Bookings - Doctor Home Visits'
-    }]
   },
   
-  // Twitter Sharing Settings - Similar to Facebook, but specifically for Twitter
+  // Twitter Sharing Settings
   twitter: {
     card: 'summary_large_image',
-    title: 'Doctor Bookings - Doctor Home Visits',
-    description: 'Certified doctors at your doorstep in Vizag, Tirupati & Kakinada',
-    images: ['/twitter-image.jpg']
+    title: 'Doctor Home Visit | 24/7 MBBS Doctors at Doorstep',
+    description: 'Book certified MBBS doctors for home visits in Vizag, Tirupati & Kakinada. Available 24/7.',
   },
   
-  // Website Verification - Proves to Google that you own this website
+  // Website Verification
   verification: {
     google: '3ZVA7CuMqsgLR5sEoimEzoVQl5LB9YRdgnBNV7wa7m0',
   },
@@ -60,8 +55,6 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
 }
 
 // Main Layout Function - This creates the HTML structure for every page on your website
@@ -79,13 +72,6 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="theme-color" content="#16a34a" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-        
-        {/* Preload critical resources for mobile */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="tel:+919182296058" />
-        <link rel="preload" href="/api/leads" as="fetch" crossOrigin="anonymous" />
       </head>
       <body suppressHydrationWarning={true}>
         {/* Accessibility Features - Helps people with disabilities navigate your website */}
@@ -112,28 +98,7 @@ export default function RootLayout({
         
         {/* Vercel Speed Insights - Performance monitoring */}
         <SpeedInsights />
-        
-        
-        {/* Emergency phone preload */}
-        <Script
-          id="emergency-preload"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html: `
-              // Preload emergency contact
-              if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('/sw.js').catch(() => {});
-              }
-              
-              // Cache critical API endpoint
-              if ('caches' in window) {
-                caches.open('healthcare-v1').then(cache => {
-                  cache.add('/api/leads').catch(() => {});
-                });
-              }
-            `
-          }}
-        />
+
       </body>
     </html>
   )

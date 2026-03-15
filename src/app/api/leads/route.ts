@@ -7,6 +7,14 @@ import { sendLeadAlert } from '@/lib/integrations/telegram'
 import { validateLeadData, checkRateLimit } from '@/lib/validation/form-validation'
 import { logTelegramError, logFormSubmissionError } from '@/lib/utils/logger'
 
+// GET handler — prevents 405 console errors when PageSpeed/crawlers access this endpoint
+export async function GET() {
+  return NextResponse.json({ 
+    status: 'ok', 
+    message: 'Doctor Bookings Lead API. Use POST to submit a booking.' 
+  })
+}
+
 // Main Function - Handles booking form submissions (POST requests)
 export async function POST(request: NextRequest): Promise<NextResponse> {
   try {

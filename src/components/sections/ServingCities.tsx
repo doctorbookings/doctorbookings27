@@ -13,11 +13,11 @@ export function ServingCities() {
             🏥 Now Available
           </div>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-gray-900 mb-6 leading-tight">
-            Currently Serving: <span className="text-blue-600">Vizag, Tirupati & Kakinada</span>
+            Book a Doctor for Home Visit in <span className="text-blue-600">Vizag, Tirupati & Kakinada</span>
           </h2>
           <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-2xl mx-auto">
-            Quality healthcare at your doorstep.{" "}
-            <span className="text-green-600 font-semibold">Expanding to more cities soon!</span>
+            Certified doctors available 24/7 for home visits.{" "}
+            <span className="text-green-700 font-semibold">Select your city to book now!</span>
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center max-w-3xl mx-auto">
@@ -34,7 +34,7 @@ export function ServingCities() {
             <Link href="/tirupati" className="w-full sm:w-auto" prefetch={true}>
               <Button
                 size="lg"
-                className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white px-8 md:px-12 py-6 text-xl font-semibold rounded-xl shadow-2xl transition-all hover:scale-105 hover:shadow-3xl border-2 border-green-600"
+                className="w-full sm:w-auto bg-green-700 hover:bg-green-800 text-white px-8 md:px-12 py-6 text-xl font-semibold rounded-xl shadow-2xl transition-all hover:scale-105 hover:shadow-3xl border-2 border-green-700"
               >
                 <MapPin className="mr-3 h-6 w-6" />
                 Book Doctor in Tirupati

@@ -18,17 +18,22 @@ const faqData: FAQItem[] = [
   {
     id: "urgent-emergency",
     question: "What if my case is urgent or an emergency?",
-    answer: "For life-threatening emergencies, please call 108 immediately. Doctor Bookings is for non-emergency medical care. For urgent but non-emergency cases, we prioritize and can reach within 30-45 minutes."
+    answer: "For life-threatening emergencies, please call 108 immediately. Doctor Bookings is for non-emergency medical care. For urgent but non-emergency cases, we prioritize and can reach within 30–45 minutes."
+  },
+  {
+    id: "24-7-availability",
+    question: "Are your doctors available 24/7?",
+    answer: "Yes, our home visit doctors are available 24/7, including weekends and holidays. Whether it's early morning or late night, you can book a certified MBBS doctor for a home visit anytime."
   },
   {
     id: "response-time",
     question: "What's the typical response time?",
-    answer: "Our standard response time is under 60 minutes. For urgent cases, we can reach within 30-45 minutes. You can also schedule appointments for a preferred time slot."
+    answer: "Our standard response time is under 60 minutes. For urgent cases, we can reach within 30–45 minutes. You can also schedule appointments for a preferred time slot."
   },
   {
     id: "doctor-verification",
     question: "How are your doctors verified?",
-    answer: "All our doctors are MBBS-qualified with valid MCI registration. We verify their credentials, conduct background checks, and ensure they have relevant experience in home healthcare."
+    answer: "All our doctors are MBBS-qualified with valid MCI/NMC registration. We verify their credentials, conduct background checks, and ensure they have relevant experience in home healthcare."
   },
   {
     id: "payment-methods",
@@ -38,17 +43,22 @@ const faqData: FAQItem[] = [
   {
     id: "service-areas",
     question: "Which areas do you serve?",
-    answer: "We currently serve Visakhapatnam (Vizag), Tirupati, and Kakinada. We're expanding to more cities soon. Check our website for the latest service area updates."
-  },
-  {
-    id: "consultation-cost",
-    question: "How much does a home consultation cost?",
-    answer: "Our consultation fees vary based on the type of service and time of visit. We provide transparent pricing with no hidden charges. Contact us for detailed pricing information."
+    answer: "We currently serve Visakhapatnam (Vizag), Tirupati, and Kakinada with full city-wide coverage including surrounding neighborhoods. We're expanding to more cities soon."
   },
   {
     id: "medical-equipment",
     question: "Do doctors bring medical equipment?",
-    answer: "Yes, our doctors come equipped with essential medical equipment including stethoscope, BP monitor, thermometer, pulse oximeter, and basic diagnostic tools."
+    answer: "Yes, our doctors come equipped with essential medical equipment including stethoscope, BP monitor, thermometer, pulse oximeter, and basic diagnostic tools for a thorough at-home examination."
+  },
+  {
+    id: "elderly-senior-care",
+    question: "Do you provide regular home visits for elderly or bedridden patients?",
+    answer: "Absolutely. We specialize in senior care and home healthcare for elderly and bedridden patients. You can schedule regular check-ups, post-surgery follow-ups, or ongoing health monitoring at home."
+  },
+  {
+    id: "when-to-call",
+    question: "When should I book a home doctor visit instead of going to a hospital?",
+    answer: "A home doctor visit is ideal for non-emergency situations like fever, cold, flu, body pain, blood pressure check, blood sugar monitoring, elderly check-ups, post-surgery care, and routine health assessments. For severe chest pain, difficulty breathing, or accidents, please call 108."
   }
 ]
 
@@ -68,7 +78,7 @@ export default function FAQSection() {
               Frequently Asked Questions
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Get answers to common questions about our home healthcare services
+              Get answers to common questions about our doctor home visit services
             </p>
           </div>
 

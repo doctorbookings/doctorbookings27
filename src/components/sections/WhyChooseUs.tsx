@@ -12,7 +12,7 @@ export function WhyChooseUs() {
             Why Choose <span className="text-green-600">Doctor Bookings?</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Our qualified doctors deliver hospital-quality care with the comfort and convenience of home visits.
+            Our MBBS doctors deliver hospital-quality care at your doorstep — available 24/7, including Sundays and holidays.
           </p>
         </div>
 
@@ -38,7 +38,7 @@ export function WhyChooseUs() {
                 <Calendar className="h-6 w-6 text-purple-600" />
               </div>
               <div className="bg-purple-50 text-purple-700 px-2 py-1 rounded-full text-xs font-medium mb-3 w-fit">
-                2min-response time
+                2-Min Response Time
               </div>
               <h3 className="font-semibold text-lg mb-2">24/7 Follow-up Care</h3>
               <p className="text-gray-600">

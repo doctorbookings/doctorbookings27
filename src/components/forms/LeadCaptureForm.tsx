@@ -424,6 +424,8 @@ export function LeadCaptureForm({
             className={`w-full px-3 py-2 text-left bg-white border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 ${
               errors.city ? 'border-red-300' : 'border-gray-300'
             }`}
+            aria-label="Select your city"
+            aria-expanded={showDropdown}
             aria-invalid={!!errors.city}
             aria-describedby={errors.city ? 'city-error' : undefined}
           >
@@ -441,6 +443,7 @@ export function LeadCaptureForm({
                     setShowDropdown(false)
                   }}
                   className="w-full px-3 py-2 text-left hover:bg-gray-100 focus:outline-none focus:bg-gray-100 first:rounded-t-md last:rounded-b-md"
+                  aria-label={`Select ${city}`}
                 >
                   {city}
                 </button>
@@ -460,7 +463,7 @@ export function LeadCaptureForm({
       <Button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-green-600 hover:bg-green-700 disabled:bg-green-400 text-white py-3 px-4 rounded-md font-medium transition-colors duration-200 flex items-center justify-center space-x-2"
+        className="w-full bg-green-700 hover:bg-green-800 disabled:bg-green-400 text-white py-3 px-4 rounded-md font-medium transition-colors duration-200 flex items-center justify-center space-x-2"
       >
         {isSubmitting ? (
           <>

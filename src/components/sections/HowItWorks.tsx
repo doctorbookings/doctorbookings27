@@ -11,7 +11,7 @@ export function HowItWorks() {
       <div className="container px-4 md:px-6">
         <div className="max-w-4xl mx-auto text-center mb-8">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mb-6 text-green-600">
-            How It Works
+            How to Book a Doctor for Home Visit
           </h2>
           <p className="text-xl text-gray-600">Professional medical care in just 3 simple steps</p>
         </div>

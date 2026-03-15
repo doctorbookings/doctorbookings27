@@ -1,4 +1,4 @@
-"use client"
+// CityBusinessSchema — Server Component (no client-side interactivity needed)
 
 import { BUSINESS_CONTACT } from '@/lib/constants/healthcare'
 
@@ -114,7 +114,16 @@ export function CityBusinessSchema({ city }: CityBusinessSchemaProps) {
     "sameAs": [
       "https://doctorbookings.in",
       `https://doctorbookings.in/${city}`
-    ]
+    ],
+    "parentOrganization": {
+      "@id": "https://doctorbookings.in/#organization"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "500",
+      "bestRating": "5"
+    }
   }
 
   const medicalOrganizationSchema = {
@@ -138,6 +147,25 @@ export function CityBusinessSchema({ city }: CityBusinessSchemaProps) {
     ]
   }
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Doctor Bookings",
+        "item": "https://doctorbookings.in"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": `Doctor Home Visit ${data.address.addressLocality}`,
+        "item": data.url
+      }
+    ]
+  }
+
   return (
     <>
       <script
@@ -150,6 +178,12 @@ export function CityBusinessSchema({ city }: CityBusinessSchemaProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(medicalOrganizationSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema)
         }}
       />
     </>

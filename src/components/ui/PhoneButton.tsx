@@ -125,7 +125,7 @@ export function HeaderPhoneButton() {
   return (
     <PhoneButton
       size="sm"                                                                                    // Small size for header
-      className="bg-green-600 hover:bg-green-700 rounded-full px-2 md:px-6 text-xs md:text-sm text-white"  // Green styling
+      className="bg-green-700 hover:bg-green-800 rounded-full px-2 md:px-6 text-xs md:text-sm text-white"  // Green styling
       source="header"                                                                             // Tracks as "header" click
     >
       Call Now  {/* Button text */}
@@ -138,7 +138,7 @@ export function HeroPhoneButton() {
   return (
     <PhoneButton
       size="lg"                                                                                      // Large size for prominence
-      className="bg-green-600 hover:bg-green-700 text-white rounded-full px-8 py-6 text-lg shadow-lg"  // Large green styling
+      className="bg-green-700 hover:bg-green-800 text-white rounded-full px-8 py-6 text-lg shadow-lg"  // Large green styling
       source="hero"                                                                                 // Tracks as "hero" click
     >
       Call Now  {/* Button text */}
@@ -151,7 +151,7 @@ export function CTAPhoneButton() {
   return (
     <PhoneButton
       size="lg"                                                                                        // Large for call-to-action
-      className="bg-green-600 hover:bg-green-700 rounded-full px-8 py-6 text-lg shadow-lg text-white"  // Prominent green styling
+      className="bg-green-700 hover:bg-green-800 rounded-full px-8 py-6 text-lg shadow-lg text-white"  // Prominent green styling
       source="cta"                                                                                     // Tracks as "cta" click
     >
       Call Now  {/* Button text */}

@@ -46,5 +46,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.9,                   // Very important for local SEO
     },
+    {
+      url: `${baseUrl}/terms`,         // Terms and Conditions
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.3,                   // Low priority, but necessary for E-E-A-T trust
+    },
   ]
 }
