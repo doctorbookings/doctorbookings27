@@ -23,7 +23,7 @@ export default function TermsOfUse() {
           <section>
             <h2 className="text-xl font-semibold text-gray-900 mb-3">1. About Our Service</h2>
             <p className="text-gray-600 leading-relaxed">
-              Doctor Bookings is a platform that connects patients with certified MBBS doctors for home visits in Visakhapatnam (Vizag), Tirupati, and Kakinada. We facilitate booking and coordination of medical consultations at your home.
+              Doctor Bookings operates as a technology and facilitation platform. We provide an online marketplace that connects patients in Visakhapatnam (Vizag), Tirupati, and Kakinada with independent, experienced medical professionals for home visits. We facilitate the booking and coordination of these consultations.
             </p>
           </section>
 
@@ -50,9 +50,9 @@ export default function TermsOfUse() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-3">4. Doctor Qualifications</h2>
+            <h2 className="text-xl font-semibold text-gray-900 mb-3">4. Doctor Qualifications & Independence</h2>
             <p className="text-gray-600 leading-relaxed">
-              All doctors on our platform are MBBS-qualified with valid MCI/NMC registration. We verify credentials and conduct background checks to ensure quality healthcare delivery at your home.
+              We rigorously vet the independent medical professionals on our platform. The doctors utilizing our platform to connect with patients are highly experienced (typically 3+ years), MCI/NMC registered, MBBS-qualified, and often affiliated with top-tier hospitals. However, these doctors act as independent practitioners and are not direct employees of Doctor Bookings.
             </p>
           </section>
 
@@ -74,9 +74,9 @@ export default function TermsOfUse() {
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-3">7. Limitation of Liability</h2>
+            <h2 className="text-xl font-semibold text-gray-900 mb-3">7. Limitation of Liability (Medical Disclaimer)</h2>
             <p className="text-gray-600 leading-relaxed">
-              Doctor Bookings acts as a facilitator connecting patients with qualified doctors. While we ensure doctor quality, medical outcomes depend on individual health conditions. We are not liable for medical decisions made during consultations.
+              Doctor Bookings is strictly a technology platform and does not provide medical advice, diagnoses, or treatment directly. The independent doctors are solely responsible for all medical services, outcomes, and decisions made during the home visits. Doctor Bookings shall not be held liable for any medical negligence, malpractice, or outcomes resulting from consultations facilitated through our platform.
             </p>
           </section>
 

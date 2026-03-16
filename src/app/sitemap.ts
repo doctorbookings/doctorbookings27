@@ -24,31 +24,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: baseUrl,                    // Homepage - highest priority
-      lastModified: new Date(),
+      lastModified: '2026-03-16',
       changeFrequency: 'weekly',       // Updated weekly with new content
       priority: 1,                     // Most important page (1.0 = highest)
     },
     {
       url: `${baseUrl}/vizag`,         // Vizag city page
-      lastModified: new Date(),
+      lastModified: '2026-03-16',
       changeFrequency: 'weekly',
       priority: 0.9,                   // Very important for local SEO
     },
     {
       url: `${baseUrl}/tirupati`,      // Tirupati city page
-      lastModified: new Date(),
+      lastModified: '2026-03-16',
       changeFrequency: 'weekly',
       priority: 0.9,                   // Very important for local SEO
     },
     {
       url: `${baseUrl}/kakinada`,      // Kakinada city page
-      lastModified: new Date(),
+      lastModified: '2026-03-16',
       changeFrequency: 'weekly',
       priority: 0.9,                   // Very important for local SEO
     },
     {
       url: `${baseUrl}/terms`,         // Terms and Conditions
-      lastModified: new Date(),
+      lastModified: '2026-03-16',
       changeFrequency: 'monthly',
       priority: 0.3,                   // Low priority, but necessary for E-E-A-T trust
     },

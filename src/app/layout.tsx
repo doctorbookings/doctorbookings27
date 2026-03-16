@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   other: {
     'application-name': 'Doctor Bookings',
   },
-  
+
   // Social Media Sharing Settings
   openGraph: {
     type: 'website',
@@ -34,14 +34,14 @@ export const metadata: Metadata = {
     description: 'Book a certified MBBS doctor for home visit in Vizag, Tirupati & Kakinada. At your doorstep within 30 minutes. Available 24/7.',
     siteName: 'Doctor Bookings',
   },
-  
+
   // Twitter Sharing Settings
   twitter: {
     card: 'summary_large_image',
     title: 'Doctor Home Visit | 24/7 MBBS Doctors at Doorstep',
     description: 'Book certified MBBS doctors for home visits in Vizag, Tirupati & Kakinada. Available 24/7.',
   },
-  
+
   // Website Verification
   verification: {
     google: '3ZVA7CuMqsgLR5sEoimEzoVQl5LB9YRdgnBNV7wa7m0',
@@ -75,27 +75,27 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning={true}>
         {/* Accessibility Features - Helps people with disabilities navigate your website */}
-        <a 
-          href="#main-content" 
+        <a
+          href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-blue-600 text-white px-4 py-2 rounded-md z-50"
         >
           Skip to main content
         </a>
-        <a 
-          href="#navigation" 
+        <a
+          href="#navigation"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-32 bg-blue-600 text-white px-4 py-2 rounded-md z-50"
         >
           Skip to navigation
         </a>
-        
+
         {/* Analytics Wrapper - Tracks visitor behavior and form submissions */}
         <AnalyticsProvider>
           {children} {/* Your actual page content goes here */}
         </AnalyticsProvider>
-        
+
         {/* Vercel Analytics - Page view tracking */}
         <Analytics />
-        
+
         {/* Vercel Speed Insights - Performance monitoring */}
         <SpeedInsights />
 
