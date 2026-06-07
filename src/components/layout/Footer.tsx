@@ -17,7 +17,7 @@ export function Footer() {
               </div>
             </div>
             <p className="text-gray-400 text-sm">
-              Professional medical care delivered to your home by certified doctors across India.
+              Healthcare technology platform powering on-demand clinical services through intelligent scheduling and provider coordination systems.
             </p>
             <div className="flex space-x-4">
               <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white">
@@ -36,10 +36,10 @@ export function Footer() {
                 <Phone className="h-4 w-5 mr-2" />
                 9182296058
               </a>
-              <Button variant="ghost" className="justify-start p-0 h-auto text-gray-400 hover:text-white">
+              <a href="mailto:founder@doctorbookings.in" className="flex items-center text-gray-400 hover:text-white transition-colors">
                 <Mail className="h-4 w-4 mr-2" />
-                doctorbookings2708@gmail.com
-              </Button>
+                founder@doctorbookings.in
+              </a>
             </div>
           </div>
 
@@ -81,7 +81,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">© 2025 Doctor Bookings. All rights reserved.</p>
+          <p className="text-gray-400 text-sm">© 2026 Doctor Bookings. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors">
               Privacy Policy

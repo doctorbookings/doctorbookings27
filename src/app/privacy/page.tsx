@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/Footer"
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | Doctor Bookings',
-  description: 'Privacy Policy for Doctor Bookings - Learn how we collect, use, and protect your personal information when you use our doctor home visit services.',
+  description: 'Privacy Policy for Doctor Bookings - Learn how we collect, use, and protect your personal information when you use our healthcare technology platform.',
   alternates: {
     canonical: 'https://doctorbookings.in/privacy'
   }
@@ -17,74 +17,74 @@ export default function PrivacyPolicy() {
 
       <main className="container px-4 md:px-6 py-12 max-w-4xl mx-auto">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Privacy Policy</h1>
-        <p className="text-gray-500 mb-8">Last updated: March 2025</p>
+        <p className="text-gray-500 mb-8">Last updated: June 2026</p>
 
         <div className="prose prose-gray max-w-none space-y-8">
           <section>
             <h2 className="text-xl font-semibold text-gray-900 mb-3">1. Information We Collect</h2>
             <p className="text-gray-600 leading-relaxed">
-              When you use Doctor Bookings, we may collect the following information:
+              When you interact with the Doctor Bookings platform, our systems may collect and process the following categories of data:
             </p>
             <ul className="list-disc pl-6 text-gray-600 space-y-1 mt-2">
-              <li>Name, phone number, and email address provided during booking</li>
-              <li>City and locality for service delivery</li>
-              <li>Health symptoms or concerns shared for consultation purposes</li>
-              <li>Device and browser information for website optimization</li>
+              <li>Personally identifiable information (name, phone number, email) submitted during service requests</li>
+              <li>Geolocation and locality data for provider dispatch and service coordination</li>
+              <li>Health-related inputs and symptom data shared for clinical consultation routing</li>
+              <li>Device metadata, session identifiers, and browser telemetry for platform optimization</li>
             </ul>
           </section>
 
           <section>
             <h2 className="text-xl font-semibold text-gray-900 mb-3">2. How We Use Your Information</h2>
-            <p className="text-gray-600 leading-relaxed">We use your information to:</p>
+            <p className="text-gray-600 leading-relaxed">Your data is processed for the following operational purposes:</p>
             <ul className="list-disc pl-6 text-gray-600 space-y-1 mt-2">
-              <li>Process and fulfill your doctor home visit bookings</li>
-              <li>Contact you to confirm appointments and provide service updates</li>
-              <li>Improve our services and website experience</li>
-              <li>Send important service-related communications</li>
+              <li>Executing end-to-end service fulfillment including provider matching and dispatch orchestration</li>
+              <li>Appointment confirmation, scheduling coordination, and real-time service status updates</li>
+              <li>Platform analytics, performance monitoring, and service quality benchmarking</li>
+              <li>Transactional and operational communications critical to service delivery</li>
             </ul>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-3">3. Data Protection</h2>
+            <h2 className="text-xl font-semibold text-gray-900 mb-3">3. Data Protection &amp; Security Infrastructure</h2>
             <p className="text-gray-600 leading-relaxed">
-              We take the security of your personal data seriously. We implement industry-standard security measures to protect your information from unauthorized access, alteration, or disclosure. Your health-related information is handled with strict confidentiality in accordance with medical privacy standards.
+              We employ industry-standard encryption protocols, access control mechanisms, and secure data handling procedures to safeguard user information against unauthorized access, modification, or disclosure. All health-related data is processed in compliance with applicable medical data privacy standards and handled under strict confidentiality protocols throughout our system architecture.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-3">4. Information Sharing</h2>
+            <h2 className="text-xl font-semibold text-gray-900 mb-3">4. Information Sharing &amp; Third-Party Access</h2>
             <p className="text-gray-600 leading-relaxed">
-              We do not sell, trade, or rent your personal information to third parties. We may share your information only with:
+              We do not sell, trade, or commercially distribute your personal information to third parties. Data sharing is restricted to:
             </p>
             <ul className="list-disc pl-6 text-gray-600 space-y-1 mt-2">
-              <li>Doctors assigned to your home visit for consultation purposes</li>
-              <li>Service providers who assist in delivering our services (e.g., communication platforms)</li>
-              <li>Legal authorities when required by applicable law</li>
+              <li>Assigned healthcare providers for the purpose of clinical consultation delivery</li>
+              <li>Infrastructure and communication service providers integral to platform operations</li>
+              <li>Regulatory and legal authorities when mandated by applicable jurisdiction</li>
             </ul>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-3">5. Cookies & Analytics</h2>
+            <h2 className="text-xl font-semibold text-gray-900 mb-3">5. Cookies, Analytics &amp; Tracking Technologies</h2>
             <p className="text-gray-600 leading-relaxed">
-              We may use cookies and similar technologies to improve website performance and understand how visitors use our site. You can control cookies through your browser settings.
+              Our platform utilizes cookies, session storage, and analytical instrumentation to monitor application performance, track user engagement patterns, and optimize the overall service experience. Users retain full control over cookie preferences through their browser configuration settings.
             </p>
           </section>
 
           <section>
-            <h2 className="text-xl font-semibold text-gray-900 mb-3">6. Your Rights</h2>
+            <h2 className="text-xl font-semibold text-gray-900 mb-3">6. Your Rights &amp; Data Control</h2>
             <p className="text-gray-600 leading-relaxed">
-              You have the right to access, update, or request deletion of your personal data. To exercise these rights, contact us at doctorbookings2708@gmail.com.
+              You have the right to access, rectify, or request permanent deletion of your personal data from our systems. To exercise any of these rights, contact our data operations team at founder@doctorbookings.in.
             </p>
           </section>
 
           <section>
             <h2 className="text-xl font-semibold text-gray-900 mb-3">7. Contact Us</h2>
             <p className="text-gray-600 leading-relaxed">
-              If you have questions about this Privacy Policy, please contact us at:
+              For inquiries regarding this Privacy Policy or our data handling practices, reach us at:
             </p>
             <p className="text-gray-600 mt-2">
-              <strong>Email:</strong> doctorbookings2708@gmail.com<br />
-              <strong>Phone:</strong> <a href="tel:+919182296058" className="text-blue-600 hover:underline">9182296058</a>
+              <strong>Email:</strong> <a href="mailto:founder@doctorbookings.in" className="text-blue-600 hover:underline">founder@doctorbookings.in</a><br />
+              <strong>Phone:</strong> <a href="tel:+919182296058" className="text-blue-600 hover:underline">+91 9182296058</a>
             </p>
           </section>
         </div>

@@ -112,7 +112,7 @@ export default function DoctorBookings() {
     "url": "https://doctorbookings.in",
     "logo": "https://doctorbookings.in/icon.svg",
     "telephone": "+91-9182296058",
-    "email": "doctorbookings.in@gmail.com",
+    "email": "founder@doctorbookings.in",
     "foundingDate": "2025",
     "contactPoint": [
       {

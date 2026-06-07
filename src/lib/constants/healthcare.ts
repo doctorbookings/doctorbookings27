@@ -38,7 +38,7 @@ export const SERVICE_CITIES = {
 export const BUSINESS_CONTACT = {
   MAIN_PHONE: process.env.NEXT_PUBLIC_MAIN_PHONE || '+91-9182296058',        // Primary business number
   EMERGENCY_PHONE: process.env.NEXT_PUBLIC_MAIN_PHONE || '+91-9182296058',   // For urgent medical cases
-  EMAIL: process.env.NEXT_PUBLIC_BUSINESS_EMAIL || 'doctorbookings2708@gmail.com',  // Business email
+  EMAIL: process.env.NEXT_PUBLIC_BUSINESS_EMAIL || 'founder@doctorbookings.in',  // Business email
 } as const;
 
 // Your Service Promises - What you tell customers to expect
